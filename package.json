@@ -1,0 +1,58 @@
+{
+  "name": "good",
+  "version": "0.0.1",
+  "description": "A collection of utility functions like common Math functions and common iterator operations",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/**/*",
+    "test/**/*"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nyc mocha test/**/*.spec.ts",
+    "lint": "tslint --fix --project .",
+    "prepare": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyattis/good.git"
+  },
+  "keywords": [
+    "utility",
+    "math",
+    "iteration",
+    "random"
+  ],
+  "author": "wyattis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wyattis/good/issues"
+  },
+  "homepage": "https://github.com/wyattis/good#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.2",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.4",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.19.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.6.2"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "src/**/*.d.ts"
+    ],
+    "reporter": [
+      "text"
+    ]
+  }
+}
