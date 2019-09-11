@@ -1,25 +1,32 @@
-// Simple seedable Psuedo random number generator
-let seed = 1
+/**
+ * @private
+ */
 let rng: () => number = Math.random
-function prng (): number {
-  seed = seed * 16807 % 2147483647
-  return (seed - 1) / 2147483646
+
+/**
+ * Simple seedable Psuedo random number generator
+ * @private
+ */
+function makePRNG (seed = 1) {
+  function prng (): number {
+    seed = seed * 16807 % 2147483647
+    return (seed - 1) / 2147483646
+  }
+  rng = prng
 }
 
 /**
  * Set the seed for our prng
  * @param seed
  */
-export function setSeed (v: number) {
-  seed = v
-  rng = prng
+export function setSeed (seed: number) {
+  makePRNG(seed)
 }
 
 /**
  * Remove any previously set seed on the random number generator
  */
 export function clearSeed () {
-  seed = 1
   rng = Math.random
 }
 

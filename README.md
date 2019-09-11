@@ -20,5 +20,4 @@ A collection of common methods performed on arrays such as `range(min, max, step
 - [ ] Examples
 
 #### Additions
-- [ ] Iterate through an array randomly with minimal memory usage (potentially using 
-      [this](https://en.wikipedia.org/wiki/Linear_congruential_generator) method)
+- [ ] Iterate through an array randomly with minimal memory usage (potentially using [this](https://en.wikipedia.org/wiki/Linear_congruential_generator) method)
