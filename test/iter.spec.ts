@@ -33,6 +33,10 @@ describe('Iterator helpers', () => {
       const permSet = new Set(perms.map(p => p.join('')))
       expect(permSet.size).to.eql(perms.length, 'All permutations should be unique')
     })
+    it('should have the expected result', () => {
+      const perms = Array.from(permutationsOf([0, 1, 2]))
+      expect(perms).to.deep.include.members([[0, 1, 2], [1, 0, 2], [2, 0, 1], [0, 2, 1], [1, 2, 0], [2, 1, 0]])
+    })
   })
   describe('Combinations', () => {
     it('should generate combinations of N from an array', () => {

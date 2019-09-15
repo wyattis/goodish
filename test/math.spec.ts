@@ -15,9 +15,9 @@ describe('Math helpers', () => {
   describe('seeding', () => {
     it('should obey a seed once the seed is set', () => {
       setSeed(1)
-      expect(randomInt(1, 10000)).to.eql(1)
+      expect(randomInt(1, 10000)).to.eql(1316)
       clearSeed()
-      expect(randomInt(1, 10000)).to.not.eql(1)
+      expect(randomInt(1, 10000)).to.not.eql(1316)
     })
   })
   describe('random', () => {
