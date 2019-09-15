@@ -1,36 +1,35 @@
 {
-  "name": "good",
+  "name": "goodish",
   "version": "0.0.1",
   "description": "A collection of utility functions like common Math functions and common iterator operations",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "nyc mocha test/**/*.spec.ts",
     "lint": "tslint --fix --project .",
     "prepare": "tsc && npm run docs",
-    "docs":  "typedoc --out docs ./src/index.ts"
+    "docs": "typedoc --out docs ./src/index.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wyattis/good.git"
+    "url": "git+https://github.com/wyattis/goodsh.git"
   },
   "keywords": [
     "utility",
     "math",
     "iteration",
-    "random"
+    "random",
+    "seed"
   ],
   "author": "wyattis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wyattis/good/issues"
+    "url": "https://github.com/wyattis/goodish/issues"
   },
-  "homepage": "https://github.com/wyattis/good#readme",
+  "homepage": "https://github.com/wyattis/goodish#readme",
   "devDependencies": {
     "@types/chai": "^4.2.2",
     "@types/mocha": "^5.2.7",
@@ -42,6 +41,7 @@
     "tslint": "^5.19.0",
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.15.0",
+    "typedoc-plugin-nojekyll": "^1.0.1",
     "typescript": "^3.6.2"
   },
   "nyc": {

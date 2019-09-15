@@ -2,6 +2,12 @@ import { random, randomInt } from './Math'
 
 /**
  * Returns an array of values between the min and max values.
+ *
+ * ```typescript
+ * import { rangeArr } from 'goodish'
+ * const arr = rangeArr(0, 5) // [0, 1, 2, 3, 4, 5]
+ * ```
+ *
  * @param min
  * @param max
  * @param step
@@ -12,6 +18,13 @@ export function rangeArr (min: number, max: number, step = 1): number[] {
 
 /**
  * A generator which yields each value between the min and max values
+ *
+ * ```typescript
+ * import { range } from 'goodish'
+ * for (const n of range(0, 5)) {
+ *   console.log(n) // 0, 1, 2, 3, 4
+ * }
+ * ```
  * @param min
  * @param max
  * @param step
@@ -24,6 +37,12 @@ export function* range (min: number, max: number, step = 1): IterableIterator<nu
 
 /**
  * Count the number of items in an iterator
+ *
+ * ```typescript
+ * import { count } from 'goodish'
+ * console.log(count([0, 1, 2, 3, 4])) // 5
+ * ```
+ *
  * @param arr
  */
 export function count (arr: Iterable<any>): number {
@@ -36,6 +55,14 @@ export function count (arr: Iterable<any>): number {
 
 /**
  * Returns a tuple containing a random element from a collection and the index of that element in the collection.
+ *
+ * ```typescript
+ * import { randomFrom, setSeed } from 'goodish'
+ * const arr = [0, 1, 2, 3, 4]
+ * console.log(randomFrom(arr)) // any single element of arr. will be different each time this code runs
+ * setSeed(1)
+ * console.log(randomFrom(arr)) // always the same element of arr
+ * ```
  * @param arr
  */
 export function randomFrom<T> (arr: T[]): T {
@@ -44,7 +71,16 @@ export function randomFrom<T> (arr: T[]): T {
 }
 
 /**
- * Shuffle an array in place
+ * Shuffle an array in place.
+ *
+ * ```typescript
+ * import { shuffle, setSeed } from 'goodish'
+ * const arr = [0, 1, 2, 3, 4]
+ * console.log(shuffle(arr.slice())) // a different array order each time this code is run
+ * setSeed(1)
+ * console.log(shuffle(arr.slice()) // a different array order, but will be the same each time the code is run
+ * ```
+ *
  * @param arr
  * @reference Adapted from [here](https://stackoverflow.com/a/6274381/5551941)
  */
@@ -63,6 +99,12 @@ export function shuffle<T> (arr: T[]): T[] {
 
 /**
  * A generator which yields all of the permutations of an array
+ *
+ * ```typescript
+ * import { permutationsOf } from 'goodish'
+ * console.log(Array.from(permutationsOf([0, 1, 2, 3, 4]))
+ * ```
+ *
  * @param arr
  * @reference Adapted from [this answer](https://stackoverflow.com/a/37580979/5551941)
  */
@@ -91,6 +133,12 @@ export function* permutationsOf<T> (arr: T[]): IterableIterator<T[]> {
 
 /**
  * A generator which yields all of the combinations of N items from an array.
+ *
+ * ```typescript
+ * import { combinationsOf } from 'goodish'
+ * console.log(Array.from(combinationsOf([0, 1, 2], 2)) // [[0, 1], [0, 2], [1, 2]]
+ * ```
+ *
  * @param arr
  * @param n
  * @reference Copied verbatim from [this site](https://lowrey.me/es6-javascript-combination-generator/)
@@ -110,6 +158,14 @@ export function* combinationsOf<T> (arr: T[], n: number): IterableIterator<T[]> 
 
 /**
  * Swap two indexes of an array
+ *
+ * ```typescript
+ * import { swap } from 'goodish'
+ * const arr = [0, 1, 2]
+ * swap(1, 2)
+ * console.log(arr) // [0, 2, 1]
+ * ```
+ *
  * @param arr
  * @param indexA
  * @param indexB
@@ -123,6 +179,12 @@ export function swap<T> (arr: T[], indexA: number, indexB: number): T[] {
 
 /**
  * Transpose a 2D array.
+ *
+ * ```typescript
+ * import { transpose } from 'goodish'
+ * console.log(transpose([[0], [1], [2]])) // [[0, 1, 2]]
+ * ```
+ *
  * @param arr
  * @reference Copied verbatim from [this answer](https://stackoverflow.com/a/17428705/5551941)
  */

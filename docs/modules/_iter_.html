@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Iter&quot; | good</title>
+	<title>&quot;Iter&quot; | goodish</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">good</a>
+					<a href="../index.html" class="title">goodish</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -99,13 +99,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L98">Iter.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L146">Iter.ts:146</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>A generator which yields all of the combinations of N items from an array.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { combinationsOf } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Array</span>.from(combinationsOf([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>], <span class="hljs-number">2</span>)) <span class="hljs-comment">// [[0, 1], [0, 2], [1, 2]]</span></code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>reference</dt>
 									<dd><p>Copied verbatim from <a href="https://lowrey.me/es6-javascript-combination-generator/">this site</a></p>
@@ -141,13 +143,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L29">Iter.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L48">Iter.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Count the number of items in an iterator</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { count } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(count([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])) <span class="hljs-comment">// 5</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -171,13 +175,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L69">Iter.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L111">Iter.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>A generator which yields all of the permutations of an array</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { permutationsOf } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Array</span>.from(permutationsOf([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]))</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>reference</dt>
 									<dd><p>Adapted from <a href="https://stackoverflow.com/a/37580979/5551941">this answer</a></p>
@@ -210,13 +216,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L41">Iter.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L68">Iter.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns a tuple containing a random element from a collection and the index of that element in the collection.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { randomFrom, setSeed } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+<span class="hljs-built_in">console</span>.log(randomFrom(arr)) <span class="hljs-comment">// any single element of arr. will be different each time this code runs</span>
+setSeed(<span class="hljs-number">1</span>)
+<span class="hljs-built_in">console</span>.log(randomFrom(arr)) <span class="hljs-comment">// always the same element of arr</span></code></pre>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -246,13 +257,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L19">Iter.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L32">Iter.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>A generator which yields each value between the min and max values</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { range } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> n of range(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>)) {
+  <span class="hljs-built_in">console</span>.log(n) <span class="hljs-comment">// 0, 1, 2, 3, 4</span>
+}</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -282,13 +297,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L9">Iter.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L15">Iter.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns an array of values between the min and max values.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { rangeArr } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">const</span> arr = rangeArr(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>) <span class="hljs-comment">// [0, 1, 2, 3, 4, 5]</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -318,13 +335,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L51">Iter.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L87">Iter.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Shuffle an array in place</p>
+									<p>Shuffle an array in place.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { shuffle, setSeed } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+<span class="hljs-built_in">console</span>.log(shuffle(arr.slice())) <span class="hljs-comment">// a different array order each time this code is run</span>
+setSeed(<span class="hljs-number">1</span>)
+<span class="hljs-built_in">console</span>.log(shuffle(arr.slice()) <span class="hljs-comment">// a different array order, but will be the same each time the code is run</span></code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>reference</dt>
 									<dd><p>Adapted from <a href="https://stackoverflow.com/a/6274381/5551941">here</a></p>
@@ -357,13 +379,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L117">Iter.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L173">Iter.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Swap two indexes of an array</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { swap } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+swap(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+<span class="hljs-built_in">console</span>.log(arr) <span class="hljs-comment">// [0, 2, 1]</span></code></pre>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -399,13 +425,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Iter.ts#L129">Iter.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Iter.ts#L191">Iter.ts:191</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Transpose a 2D array.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { transpose } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(transpose([[<span class="hljs-number">0</span>], [<span class="hljs-number">1</span>], [<span class="hljs-number">2</span>]])) <span class="hljs-comment">// [[0, 1, 2]]</span></code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>reference</dt>
 									<dd><p>Copied verbatim from <a href="https://stackoverflow.com/a/17428705/5551941">this answer</a></p>
@@ -450,6 +478,12 @@
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="_math_.html">"<wbr>Math"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="_point2d_.html">"<wbr>Point2<wbr>D"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="_rectangle_.html">"<wbr>Rectangle"</a>
 					</li>
 				</ul>
 			</nav>

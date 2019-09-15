@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Math&quot; | good</title>
+	<title>&quot;Math&quot; | goodish</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">good</a>
+					<a href="../index.html" class="title">goodish</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -102,7 +102,7 @@
 					<div class="tsd-signature tsd-kind-icon">rng<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;Math.random</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L4">Math.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L4">Math.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -136,7 +136,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L102">Math.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L151">Math.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -144,6 +144,8 @@
 									<p>Clamp a value between the min and max values. If it is below min or above max then we set the value equal to the
 									respective boundary.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { clamp } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(clamp(<span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>)) <span class="hljs-comment">// 10</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -173,13 +175,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L29">Math.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L42">Math.ts:42</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Remove any previously set seed on the random number generator</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { clearSeed } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+clearSeed() <span class="hljs-comment">// Now randomized functions will use Math.random again</span></code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -195,13 +199,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L66">Math.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L103">Math.ts:103</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Calculate the greatest common divisor of two numbers</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { greatestCommonDivisor } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(greatestCommonDivisor(<span class="hljs-number">18</span>, <span class="hljs-number">12</span>)) <span class="hljs-comment">// 6</span></code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>reference</dt>
 									<dd><p>Adapted from <a href="https://www.w3resource.com/javascript-exercises/javascript-math-exercise-8.php">this site</a></p>
@@ -231,13 +237,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L86">Math.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L129">Math.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Calculate the lowest common multiple of two numbers</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { lowestCommonMultiple } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(lowestCommonMultiple(<span class="hljs-number">6</span>, <span class="hljs-number">8</span>)) <span class="hljs-comment">// 24</span></code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>reference</dt>
 									<dd><p>Adapted from <a href="https://www.w3resource.com/javascript-exercises/javascript-math-exercise-10.php">this site</a></p>
@@ -267,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L10">Math.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L10">Math.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -295,13 +303,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L38">Math.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L57">Math.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns a random float between min and max.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { random } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(random()) <span class="hljs-comment">// value between 0 and 1</span>
+<span class="hljs-built_in">console</span>.log(random(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>) <span class="hljs-comment">// value between 0 and 100</span>
+
+<span class="hljs-meta">@param</span> min
+<span class="hljs-meta">@param</span> max</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -310,8 +324,6 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> max: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -328,13 +340,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L47">Math.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L72">Math.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns a random integer between the min and max values.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { randomInt } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(randomInt(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>)) <span class="hljs-comment">// Some integer between 0 and 100</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -361,13 +375,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L22">Math.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L30">Math.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Set the seed for our prng</p>
+									<p>Set the seed for our prng and switch to a simple, seedable prng</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { randomInt, setSeed } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+setSeed(<span class="hljs-number">11</span>)
+randomInt(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>) <span class="hljs-comment">// always 44</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -391,13 +408,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L56">Math.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L87">Math.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Round a number to the specified number of digits</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { toFixedNum } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(toFixedNum(<span class="hljs-number">3.14159</span>, <span class="hljs-number">2</span>)) <span class="hljs-comment">// 3.14</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -424,16 +443,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/5e3a9c4/src/Math.ts#L121">Math.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/ef929fe/src/Math.ts#L173">Math.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Wrap the value within these bounds. More explanation of the idea (here)[<a href="https://en.wikipedia.org/wiki/Wrapping_(graphics)%5D">https://en.wikipedia.org/wiki/Wrapping_(graphics)]</a>
-										Ex:
-										val: 5, min: 1, max: 4
-									returned val is 2 because the value exceeds the max val by 1</p>
+									<p>Wrap the value within these bounds. More explanation of the idea (here)[<a href="https://en.wikipedia.org/wiki/Wrapping_(graphics)%5D">https://en.wikipedia.org/wiki/Wrapping_(graphics)]</a></p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { wrap } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-built_in">console</span>.log(wrap(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>)) <span class="hljs-comment">// 2 because value exceeds the max val by 1 and wraps around from the lower boundary</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -475,6 +493,12 @@
 					</li>
 					<li class="current tsd-kind-external-module tsd-is-external">
 						<a href="_math_.html">"<wbr>Math"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="_point2d_.html">"<wbr>Point2<wbr>D"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="_rectangle_.html">"<wbr>Rectangle"</a>
 					</li>
 				</ul>
 			</nav>

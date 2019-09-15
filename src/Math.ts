@@ -8,6 +8,7 @@ let rng: () => number = Math.random
  * @private
  */
 function makePRNG (seed = 1) {
+  seed = seed * 16807 % 2147483647
   function prng (): number {
     seed = seed * 16807 % 2147483647
     return (seed - 1) / 2147483646
@@ -16,7 +17,14 @@ function makePRNG (seed = 1) {
 }
 
 /**
- * Set the seed for our prng
+ * Set the seed for our prng and switch to a simple, seedable prng
+ *
+ * ```typescript
+ * import { randomInt, setSeed } from 'goodish'
+ * setSeed(11)
+ * randomInt(1, 100) // always 44
+ * ```
+ *
  * @param seed
  */
 export function setSeed (seed: number) {
@@ -25,6 +33,11 @@ export function setSeed (seed: number) {
 
 /**
  * Remove any previously set seed on the random number generator
+ *
+ * ```typescript
+ * import { clearSeed } from 'goodish'
+ * clearSeed() // Now randomized functions will use Math.random again
+ * ```
  */
 export function clearSeed () {
   rng = Math.random
@@ -32,6 +45,12 @@ export function clearSeed () {
 
 /**
  * Returns a random float between min and max.
+ *
+ * ```typescript
+ * import { random } from 'goodish'
+ * console.log(random()) // value between 0 and 1
+ * console.log(random(0, 100) // value between 0 and 100
+ *
  * @param min
  * @param max
  */
@@ -41,6 +60,12 @@ export function random (min: number = 0, max: number = 1): number {
 
 /**
  * Returns a random integer between the min and max values.
+ *
+ * ```typescript
+ * import { randomInt } from 'goodish'
+ * console.log(randomInt(0, 100)) // Some integer between 0 and 100
+ * ```
+ *
  * @param min
  * @param max
  */
@@ -50,6 +75,12 @@ export function randomInt (min: number, max: number): number {
 
 /**
  * Round a number to the specified number of digits
+ *
+ * ```typescript
+ * import { toFixedNum } from 'goodish'
+ * console.log(toFixedNum(3.14159, 2)) // 3.14
+ * ```
+ *
  * @param float
  * @param digits
  */
@@ -59,6 +90,12 @@ export function toFixedNum (float: number, digits: number): number {
 
 /**
  * Calculate the greatest common divisor of two numbers
+ *
+ * ```typescript
+ * import { greatestCommonDivisor } from 'goodish'
+ * console.log(greatestCommonDivisor(18, 12)) // 6
+ * ```
+ *
  * @param numA
  * @param numB
  * @reference Adapted from [this site](https://www.w3resource.com/javascript-exercises/javascript-math-exercise-8.php)
@@ -79,6 +116,12 @@ export function greatestCommonDivisor (numA: number, numB: number): number {
 
 /**
  * Calculate the lowest common multiple of two numbers
+ *
+ * ```typescript
+ * import { lowestCommonMultiple } from 'goodish'
+ * console.log(lowestCommonMultiple(6, 8)) // 24
+ * ```
+ *
  * @param numA
  * @param numB
  * @reference Adapted from [this site](https://www.w3resource.com/javascript-exercises/javascript-math-exercise-10.php)
@@ -95,6 +138,12 @@ export function lowestCommonMultiple (numA: number, numB: number): number {
 /**
  * Clamp a value between the min and max values. If it is below min or above max then we set the value equal to the
  * respective boundary.
+ *
+ * ```typescript
+ * import { clamp } from 'goodish'
+ * console.log(clamp(100, 0, 10)) // 10
+ * ```
+ *
  * @param val
  * @param min
  * @param max
@@ -111,9 +160,12 @@ export function clamp (val: number, min: number, max: number): number {
 
 /**
  * Wrap the value within these bounds. More explanation of the idea (here)[https://en.wikipedia.org/wiki/Wrapping_(graphics)]
- * Ex:
- *   val: 5, min: 1, max: 4
- *   returned val is 2 because the value exceeds the max val by 1
+ *
+ * ```typescript
+ * import { wrap } from 'goodish'
+ * console.log(wrap(5, 1, 4)) // 2 because value exceeds the max val by 1 and wraps around from the lower boundary
+ * ```
+ *
  * @param val
  * @param min
  * @param max
