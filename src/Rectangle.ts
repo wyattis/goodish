@@ -1,21 +1,43 @@
 export class Rectangle {
 
-  constructor (public x: number, public y: number, public width: number, public height: number) {}
+  public right: number
+  public bottom: number
+
+  constructor (public x: number, public y: number, width: number, height: number) {
+    this.right = x + width
+    this.bottom = y + height
+  }
 
   get left () {
     return this.x
+  }
+
+  set left (val: number) {
+    this.x = val
   }
 
   get top () {
     return this.y
   }
 
-  get bottom () {
-    return this.y + this.height
+  set top (val: number) {
+    this.y = val
   }
 
-  get right () {
-    return this.x + this.width
+  get height () {
+    return this.bottom - this.top
+  }
+
+  set height (val: number) {
+    this.bottom = this.y + val
+  }
+
+  get width () {
+    return this.right - this.left
+  }
+
+  set width (val: number) {
+    this.right = this.x + val
   }
 
 }
