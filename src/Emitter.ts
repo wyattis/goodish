@@ -2,7 +2,7 @@ type EventCallback = {
   callback: any
   context: any
 }
-export default class Emitter {
+export class Emitter {
   private eventCallbacks: {[key: string]: EventCallback[]} = {}
 
   /**

@@ -9,7 +9,7 @@
     "declaration": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "lib": ["es5", "es6", "es7", "es2015.collection"],
+    "lib": ["es5", "es6", "es7", "es2015.collection", "dom"],
     "types": [
       "node"
     ]
