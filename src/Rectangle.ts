@@ -1,3 +1,5 @@
+import { Point2D } from './Point2D'
+
 export class Rectangle {
 
   public right: number
@@ -38,6 +40,28 @@ export class Rectangle {
 
   set width (val: number) {
     this.right = this.x + val
+  }
+
+  /**
+   * Check if this rectangle intersects another rectangle
+   * @param rect
+   */
+  intersects (rect: Rectangle): boolean {
+    return rect.left < this.right &&
+      rect.right > this.left &&
+      rect.top > this.bottom &&
+      rect.bottom < this.top
+  }
+
+  /**
+   * Check if this rectangle contains a point.
+   * @param point
+   */
+  contains (point: Point2D): boolean {
+    return point.x >= this.left &&
+      point.x < this.right &&
+      point.y >= this.top &&
+      point.y < this.bottom
   }
 
 }
