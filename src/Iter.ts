@@ -67,7 +67,7 @@ export function count (arr: Iterable<any>): number {
  */
 export function randomFrom<T> (arr: T[]): T {
   if (!arr.length) return null
-  return arr[randomInt(0, arr.length - 1)]
+  return arr[randomInt(0, arr.length)]
 }
 
 /**
