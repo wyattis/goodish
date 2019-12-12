@@ -34,7 +34,6 @@
     "@types/chai": "^4.2.2",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.4",
-    "async-mutex": "^0.1.4",
     "chai": "^4.2.0",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
@@ -56,5 +55,8 @@
     "reporter": [
       "text"
     ]
+  },
+  "dependencies": {
+    "async-mutex": "^0.1.4"
   }
 }
