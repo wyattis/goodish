@@ -18,11 +18,13 @@ A collection of common methods performed on arrays such as `range(min, max, step
 `permutationsOf(arr)`, `combinationsOf(arr, n)` and `swap(arr, indexA, indexB)`.
 
 
-### TODO
-#### Chores
-- [x] Finish writing tests
-- [x] Automatically generate docs
-- [x] Examples
+### Development
+Code contributions are welcome.
 
-#### Additions
-- [ ] Iterate through an array randomly with minimal memory usage (potentially using [this](https://en.wikipedia.org/wiki/Linear_congruential_generator) method)
+#### Setup
+- `npm install`
+- `npm run test` and then confirm all tests have passed
+
+
+### TODO
+- [ ] Method to iterate through an array randomly with minimal memory usage (potentially using [this](https://en.wikipedia.org/wiki/Linear_congruential_generator) method)

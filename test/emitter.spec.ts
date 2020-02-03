@@ -1,4 +1,4 @@
-import Emitter from '../src/Emitter'
+import { Emitter } from '../src/Emitter'
 import 'mocha'
 import { expect } from 'chai'
 
@@ -93,5 +93,21 @@ describe('Emitter', () => {
     const em = new Emitter()
     expect(() => em.dispatch('test')).to.not.throw()
     expect(() => em.dispatchApply('test')).to.not.throw()
+  })
+  it('should clear all listeners to an event if no callback is specified', () => {
+    const em = new Emitter()
+    let incr = 0
+    const first = () => incr++
+    em.on('test', first)
+    em.on('test', () => incr += 2)
+    em.dispatch('test')
+    expect(incr).to.equal(3, 'All of the on closures have not run correctly')
+    em.off('test', first)
+    em.dispatch('test')
+    expect(incr).to.equal(5, 'The first closure should have been removed')
+    em.on('test', () => incr += 1000)
+    em.off('test')
+    em.dispatch('test')
+    expect(incr).to.equal(5, 'All of the closures were not removed correct')
   })
 })

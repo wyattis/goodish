@@ -36,16 +36,23 @@ export class Emitter {
   /**
    * Remove an event callback by reference
    * @param eventName
-   * @param callback
-   * @param force
+   * @param [callback]
+   * @param [force=false]
    */
-  off (eventName: string, callback: Function, force: boolean = false) {
+  off (eventName: string): void
+  off (eventName: string, callback: Function): void
+  off (eventName: string, callback: Function, force: boolean): void
+  off (eventName: string, callback?: Function, force: boolean = false) {
     if (!this.eventCallbacks[eventName]) {
       if (force) return
       throw Error('An event with this name has not been registered yet: ' + eventName)
     }
-    let cbInd = this.eventCallbacks[eventName].findIndex(cb => cb.callback === callback)
-    this.eventCallbacks[eventName].splice(cbInd, 1)
+    if (callback) {
+      let cbInd = this.eventCallbacks[eventName].findIndex(cb => cb.callback === callback)
+      this.eventCallbacks[eventName].splice(cbInd, 1)
+    } else {
+      this.eventCallbacks[eventName] = []
+    }
   }
 
   /**
