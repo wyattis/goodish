@@ -77,6 +77,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_iter_.html#count" class="tsd-kind-icon">count</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external"><a href="_iter_.html#permutationsof" class="tsd-kind-icon">permutations<wbr>Of</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external"><a href="_iter_.html#randomfrom" class="tsd-kind-icon">random<wbr>From</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external"><a href="_iter_.html#randomnfrom" class="tsd-kind-icon">randomNFrom</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_iter_.html#range" class="tsd-kind-icon">range</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_iter_.html#rangearr" class="tsd-kind-icon">range<wbr>Arr</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external"><a href="_iter_.html#shuffle" class="tsd-kind-icon">shuffle</a></li>
@@ -99,7 +100,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L146">Iter.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L169">Iter.ts:169</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -143,7 +144,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L48">Iter.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L48">Iter.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -175,7 +176,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L111">Iter.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L134">Iter.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,13 +211,13 @@
 					<a name="randomfrom" class="tsd-anchor"></a>
 					<h3>random<wbr>From</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">random<wbr>From&lt;T&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">random<wbr>From&lt;T&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L68">Iter.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L68">Iter.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +244,51 @@ setSeed(<span class="hljs-number">1</span>)
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
+					<a name="randomnfrom" class="tsd-anchor"></a>
+					<h3>randomNFrom</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">randomNFrom&lt;T&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span>, n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L86">Iter.ts:86</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an array of N randomly selected elements from the supplied array</p>
+									<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { randomNFrom, setSeed } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">const</span> arr = <span class="hljs-string">'abcdefghijklmnopqrstuvwxyz0123456789'</span>
+<span class="hljs-built_in">console</span>.log(randomNFrom(arr, <span class="hljs-number">10</span>)) <span class="hljs-comment">// a random alphanumeric array with 10 characters</span>
+setSeed(<span class="hljs-number">1</span>)
+<span class="hljs-built_in">console</span>.log(randomNFrom(arr, <span class="hljs-number">10</span>).join(<span class="hljs-string">''</span>)) <span class="hljs-comment">// always the same alphanumeric string</span></code></pre>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>arr: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>n: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -257,7 +302,7 @@ setSeed(<span class="hljs-number">1</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L32">Iter.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L32">Iter.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -297,7 +342,7 @@ setSeed(<span class="hljs-number">1</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L15">Iter.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L15">Iter.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -335,7 +380,7 @@ setSeed(<span class="hljs-number">1</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L87">Iter.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L110">Iter.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -379,7 +424,7 @@ setSeed(<span class="hljs-number">1</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L173">Iter.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L196">Iter.ts:196</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -425,7 +470,7 @@ swap(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/49932f8/src/Iter.ts#L191">Iter.ts:191</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/546e670/src/Iter.ts#L214">Iter.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -506,6 +551,9 @@ swap(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
 						<a href="_iter_.html#randomfrom" class="tsd-kind-icon">random<wbr>From</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
+						<a href="_iter_.html#randomnfrom" class="tsd-kind-icon">randomNFrom</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
 						<a href="_iter_.html#range" class="tsd-kind-icon">range</a>
