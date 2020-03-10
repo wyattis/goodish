@@ -9,8 +9,11 @@ import {
   rangeArr,
   shuffle,
   swap,
-  transpose
+  transpose,
+  randomNFrom
 } from '../src/Iter'
+
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 describe('Iterator helpers', () => {
   describe('Permutations', () => {
@@ -130,8 +133,18 @@ describe('Iterator helpers', () => {
       expect(randomFrom([])).to.be.null
     })
     it('should randomly select a value from an array', () => {
-      const vals = Array.from(range(0, 5))
-      expect(randomFrom(vals)).to.be.an('number')
+      const [r, _] = randomFrom(Array.from(range(0, 5)))
+      expect(r).to.be.an('number')
+    })
+  })
+  describe('Random N from', () => {
+    it('should return an empty array if an empty array is passed in', () => {
+      expect(randomNFrom([], 100)).to.deep.equal([])
+    })
+    it('should return a random array matching length', () => {
+      const r = randomNFrom(alphabet.split(''), 20)
+      console.log(r)
+      expect(r).to.have.lengthOf(20)
     })
   })
 })

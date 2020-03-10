@@ -65,9 +65,32 @@ export function count (arr: Iterable<any>): number {
  * ```
  * @param arr
  */
-export function randomFrom<T> (arr: T[]): T {
+export function randomFrom<T> (arr: T[]): [T, number] {
   if (!arr.length) return null
-  return arr[randomInt(0, arr.length)]
+  const index = randomInt(0, arr.length)
+  return [arr[index], index]
+}
+
+/**
+ * Returns an array of N randomly selected elements from the supplied array
+ * ```typescript
+ * import { randomNFrom, setSeed } from 'goodish'
+ * const arr = 'abcdefghijklmnopqrstuvwxyz0123456789'
+ * console.log(randomNFrom(arr, 10)) // a random alphanumeric array with 10 characters
+ * setSeed(1)
+ * console.log(randomNFrom(arr, 10).join('')) // always the same alphanumeric string
+ * ```
+ * @param arr 
+ * @param n 
+ */
+export function randomNFrom<T> (arr: T[], n: number): T[] {
+  if (!arr.length) return []
+  const r = []
+  for (let i = 0; i < n; i++) {
+    const [el, _] = randomFrom(arr)
+    r.push(el)
+  }
+  return r
 }
 
 /**
