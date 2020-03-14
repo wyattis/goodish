@@ -11,7 +11,7 @@
     "test": "nyc mocha test/**/*.spec.ts",
     "lint": "tslint --fix --project .",
     "webpack": "webpack",
-    "build": "tsc && npm run webpack",
+    "build": "npm run webpack",
     "prepare": "npm run build && npm run docs",
     "docs": "typedoc --out docs ./src/index.ts"
   },
