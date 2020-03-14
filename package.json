@@ -1,6 +1,6 @@
 {
   "name": "goodish",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A collection of utility functions like common Math functions and common iterator operations",
   "main": "./dist/goodish.js",
   "types": "./dist/goodish.d.ts",
