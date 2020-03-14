@@ -1,4 +1,4 @@
-import { Emitter } from '../src/Emitter'
+import { Emitter } from '../src'
 import 'mocha'
 import { expect } from 'chai'
 

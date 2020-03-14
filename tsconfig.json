@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "amd",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "target": "es6",
@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "declaration": true,
     "outDir": "dist",
+    "outFile": "dist/goodish.js",
     "baseUrl": ".",
     "lib": ["es5", "es6", "es7", "es2015.collection", "dom"],
     "types": [

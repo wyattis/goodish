@@ -11,7 +11,7 @@ import {
   swap,
   transpose,
   randomNFrom
-} from '../src/Iter'
+} from '../src'
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
