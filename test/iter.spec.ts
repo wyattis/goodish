@@ -11,7 +11,7 @@ import {
   swap,
   transpose,
   randomNFrom
-} from '../src'
+} from '../dist'
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'
 

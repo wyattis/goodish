@@ -2,16 +2,16 @@
   "name": "goodish",
   "version": "0.0.14",
   "description": "A collection of utility functions like common Math functions and common iterator operations",
-  "main": "./dist/goodish.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**/*"
   ],
   "scripts": {
-    "test": "nyc mocha test/**/*.spec.ts",
+    "test": "npm run build && nyc mocha test/**/*.spec.ts",
     "lint": "tslint --fix --project .",
     "webpack": "webpack",
-    "build": "npm run webpack",
+    "build": "npm run webpack && tsc",
     "prepare": "npm run build && npm run docs",
     "docs": "typedoc --out docs ./src/index.ts"
   },
