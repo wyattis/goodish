@@ -9,7 +9,7 @@ import {
   setSeed,
   toFixedNum,
   wrap
-} from '../src/Math'
+} from '../dist'
 
 describe('Math helpers', () => {
   describe('seeding', () => {
