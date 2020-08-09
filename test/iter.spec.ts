@@ -143,7 +143,6 @@ describe('Iterator helpers', () => {
     })
     it('should return a random array matching length', () => {
       const r = randomNFrom(alphabet.split(''), 20)
-      console.log(r)
       expect(r).to.have.lengthOf(20)
     })
   })

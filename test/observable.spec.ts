@@ -92,5 +92,14 @@ describe('Observable', () => {
     expect(o.b).to.not.throw()
     expect(o.b()).to.equal('wow')
   })
+  it('should proxy objects that are added to the target', (done) => {
+    const [o, bus] = Observable({}) as any
+    o.a = { b: 2 }
+    bus.on('changed', (path: string[], value: any) => {
+      expect(path).to.deep.equal(['a', 'b'])
+      done()
+    })
+    o.a.b = 3
+  })
 
 })

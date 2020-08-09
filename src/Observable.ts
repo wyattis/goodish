@@ -25,13 +25,17 @@ function observeObject<T extends object> (obj: T, bus: Emitter, path: string[] =
   return new Proxy(obj, {
     set (obj: T, prop: keyof T, value: any) {
       const p = path.concat([prop] as string[])
-      console.log('set', obj, p, value)
-      if (obj[prop] === undefined) {
-        bus.emit('added', p, value)
-      } else if (value !== obj[prop]) {
-        bus.emit('changed', p, value)
+      if (value !== obj[prop]) {
+        const proxiedVal = typeof value === 'object' && value !== null ? observeObject(value, bus, p) : value
+        if (obj[prop] === undefined) {
+          bus.emit('added', p, proxiedVal)
+        } else if (value === undefined) {
+          bus.emit('deleted', p, proxiedVal)
+        } else {
+          bus.emit('changed', p, proxiedVal)
+        }
+        obj[prop] = proxiedVal
       }
-      obj[prop] = value
       return true
     },
     deleteProperty (obj: T, prop: keyof T) {
