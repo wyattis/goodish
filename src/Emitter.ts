@@ -2,6 +2,24 @@ type EventCallback = {
   callback: any
   context: any
 }
+
+
+/**
+ * A simple event emitter interface for sending arbitrary events to any number of listeners.
+ *
+ * ```typescript
+ * import { Emitter } from 'goodish'
+ * const bus = new Emitter()
+ * bus.on('hello', (msg: string) => {
+ *   console.log('hello', msg)
+ * })
+ * bus.emit('hello', 'world')
+ * // # 'hello world' logged in console
+ * ```
+ *
+ * @export
+ * @class Emitter
+ */
 export class Emitter {
   private eventCallbacks: {[key: string]: EventCallback[]} = {}
 

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Timing&quot; | goodish</title>
+	<title>&quot;Observable&quot; | goodish</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_timing_.html">&quot;Timing&quot;</a>
+					<a href="_observable_.html">&quot;Observable&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Timing&quot;</h1>
+			<h1>External module &quot;Observable&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,8 +73,9 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_timing_.html#throttler" class="tsd-kind-icon">throttler</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-external"><a href="_timing_.html#wait" class="tsd-kind-icon">wait</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external"><a href="_observable_.html#observable" class="tsd-kind-icon">Observable</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported"><a href="_observable_.html#observearray" class="tsd-kind-icon">observe<wbr>Array</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported"><a href="_observable_.html#observeobject" class="tsd-kind-icon">observe<wbr>Object</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,65 +83,135 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-					<a name="throttler" class="tsd-anchor"></a>
-					<h3>throttler</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">throttler<span class="tsd-signature-symbol">(</span>freq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
+					<a name="observable" class="tsd-anchor"></a>
+					<h3>Observable</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">Observable&lt;T&gt;<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="../classes/_emitter_.emitter.html" class="tsd-signature-type">Emitter</a><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Timing.ts#L15">Timing.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Observable.ts#L81">Observable.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>A shared throttle. Safe to be used by multiple asynchronous requests at the same time.</p>
+									<p>Returns a proxied object and an emitter which will emit &#39;added&#39;, &#39;changed&#39; and &#39;deleted&#39; events
+									whenever changes are made to the returned proxy. Useful for a simple state store.</p>
 								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { Observable } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">const</span> [o, bus] = Observable({ a: <span class="hljs-number">1</span> })
+
+bus.on(<span class="hljs-string">'added'</span>, <span class="hljs-function">(<span class="hljs-params">path: <span class="hljs-built_in">string</span>[], value: <span class="hljs-built_in">any</span></span>) =&gt;</span> {})
+bus.on(<span class="hljs-string">'deleted'</span>, <span class="hljs-function">(<span class="hljs-params">path: <span class="hljs-built_in">string</span>[]</span>) =&gt;</span> {})
+bus.on(<span class="hljs-string">'changed'</span>, <span class="hljs-function">(<span class="hljs-params">path: <span class="hljs-built_in">string</span>[], value: <span class="hljs-built_in">any</span></span>) =&gt;</span> {})
+
+o.b = <span class="hljs-number">2</span>          <span class="hljs-comment">// Fires 'added' event</span>
+o.a = <span class="hljs-number">2</span>          <span class="hljs-comment">// Fires 'changed' event</span>
+<span class="hljs-keyword">delete</span> o.a       <span class="hljs-comment">// Fires 'deleted' event</span>
+o.a = <span class="hljs-literal">undefined</span>  <span class="hljs-comment">// Fires 'deleted' event</span></code></pre>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>freq: <span class="tsd-signature-type">number</span></h5>
+									<h5>value: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The number of milliseconds between resolution of this function</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="../classes/_emitter_.emitter.html" class="tsd-signature-type">Emitter</a><span class="tsd-signature-symbol">]</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-					<a name="wait" class="tsd-anchor"></a>
-					<h3>wait</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">wait<span class="tsd-signature-symbol">(</span>ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported">
+					<a name="observearray" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> observe<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">observe<wbr>Array&lt;T&gt;<span class="tsd-signature-symbol">(</span>arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, bus<span class="tsd-signature-symbol">: </span><a href="../classes/_emitter_.emitter.html" class="tsd-signature-type">Emitter</a>, path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Timing.ts#L5">Timing.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Observable.ts#L55">Observable.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>An asynchronous wait function. Just useful for throttling purposes.</p>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt>template</dt>
+									<dd><p>T</p>
+									</dd>
+								</dl>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>ms: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The number of milliseconds to wait before resolving the promise</p>
-									</div>
+									<h5>arr: <span class="tsd-signature-type">T</span></h5>
+								</li>
+								<li>
+									<h5>bus: <a href="../classes/_emitter_.emitter.html" class="tsd-signature-type">Emitter</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> path: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported">
+					<a name="observeobject" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> observe<wbr>Object</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">observe<wbr>Object&lt;T&gt;<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, bus<span class="tsd-signature-symbol">: </span><a href="../classes/_emitter_.emitter.html" class="tsd-signature-type">Emitter</a>, path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Observable.ts#L13">Observable.ts:13</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>template</dt>
+									<dd><p>T</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">T</span></h5>
+								</li>
+								<li>
+									<h5>bus: <a href="../classes/_emitter_.emitter.html" class="tsd-signature-type">Emitter</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> path: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -170,7 +241,7 @@
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="_math_.html">"<wbr>Math"</a>
 					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
+					<li class="current tsd-kind-external-module tsd-is-external">
 						<a href="_observable_.html">"<wbr>Observable"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
@@ -182,18 +253,21 @@
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="_set_.html">"<wbr>Set"</a>
 					</li>
-					<li class="current tsd-kind-external-module tsd-is-external">
+					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="_timing_.html">"<wbr>Timing"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<a href="_timing_.html#throttler" class="tsd-kind-icon">throttler</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-external">
+						<a href="_observable_.html#observable" class="tsd-kind-icon">Observable</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-external">
-						<a href="_timing_.html#wait" class="tsd-kind-icon">wait</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported">
+						<a href="_observable_.html#observearray" class="tsd-kind-icon">observe<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-private tsd-is-external tsd-is-not-exported">
+						<a href="_observable_.html#observeobject" class="tsd-kind-icon">observe<wbr>Object</a>
 					</li>
 				</ul>
 			</nav>

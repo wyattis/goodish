@@ -69,6 +69,27 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A simple event emitter interface for sending arbitrary events to any number of listeners.</p>
+					</div>
+					<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { Emitter } <span class="hljs-keyword">from</span> <span class="hljs-string">'goodish'</span>
+<span class="hljs-keyword">const</span> bus = <span class="hljs-keyword">new</span> Emitter()
+bus.on(<span class="hljs-string">'hello'</span>, <span class="hljs-function">(<span class="hljs-params">msg: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>, msg)
+})
+bus.emit(<span class="hljs-string">'hello'</span>, <span class="hljs-string">'world'</span>)
+<span class="hljs-comment">// # 'hello world' logged in console</span></code></pre>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>class</dt>
+						<dd><p>Emitter</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -111,7 +132,7 @@
 					<div class="tsd-signature tsd-kind-icon">event<wbr>Callbacks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L6">Emitter.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L24">Emitter.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -136,7 +157,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L63">Emitter.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L81">Emitter.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -169,7 +190,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L77">Emitter.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L95">Emitter.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -202,7 +223,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L91">Emitter.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L109">Emitter.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,7 +256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L105">Emitter.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L123">Emitter.ts:123</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -259,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L42">Emitter.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L60">Emitter.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -278,7 +299,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L43">Emitter.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L61">Emitter.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -295,7 +316,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L44">Emitter.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L62">Emitter.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -324,7 +345,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L26">Emitter.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L44">Emitter.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -360,7 +381,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L13">Emitter.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L31">Emitter.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -391,7 +412,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/wyattis/good/blob/df89474/src/Emitter.ts#L98">Emitter.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/wyattis/good/blob/74d37a8/src/Emitter.ts#L116">Emitter.ts:116</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -428,6 +449,9 @@
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="../modules/_math_.html">"<wbr>Math"</a>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="../modules/_observable_.html">"<wbr>Observable"</a>
 					</li>
 					<li class=" tsd-kind-external-module tsd-is-external">
 						<a href="../modules/_point2d_.html">"<wbr>Point2<wbr>D"</a>

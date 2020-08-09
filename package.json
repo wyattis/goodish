@@ -12,7 +12,8 @@
     "lint": "tslint --fix --project .",
     "webpack": "webpack",
     "build": "npm run webpack && tsc",
-    "prepare": "npm run build && npm run docs",
+    "preversion": "npm run build && npm run docs",
+    "prepare": "npm run build",
     "docs": "typedoc --out docs ./src/index.ts"
   },
   "repository": {
