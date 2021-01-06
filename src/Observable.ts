@@ -1,4 +1,5 @@
-import { Emitter } from './Emitter'
+// @ts-ignore
+import { Emitter } from './Emitter.ts'
 
 
 /**

@@ -1,4 +1,5 @@
-import { Point2D } from './Point2D'
+// @ts-ignore
+import { Point2D } from './Point2D.ts'
 
 export class Vector2D {
   constructor (public x: number, public y: number) {}

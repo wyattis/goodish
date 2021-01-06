@@ -1,9 +1,18 @@
-export * from './Iter'
-export * from './Math'
-export * from './Rectangle'
-export * from './Point2D'
-export * from './Emitter'
-export * from './Timing'
-export * from './Set'
-export * from './Observable'
-export * from './Objects'
+// @ts-ignore
+export * from './Iter.ts'
+// @ts-ignore
+export * from './Math.ts'
+// @ts-ignore
+export * from './Rectangle.ts'
+// @ts-ignore
+export * from './Point2D.ts'
+// @ts-ignore
+export * from './Emitter.ts'
+// @ts-ignore
+export * from './Timing.ts'
+// @ts-ignore
+export * from './Set.ts'
+// @ts-ignore
+export * from './Observable.ts'
+// @ts-ignore
+export * from './Objects.ts'
