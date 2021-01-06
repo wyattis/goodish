@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import 'mocha'
 import {
   union, intersection, difference, exclusiveOr, rightDifference
-} from '../src/Set'
+} from '../dist/Set'
 
 const sets = {
   '1-5': [1, 2, 3, 4, 5],
@@ -53,6 +53,11 @@ describe('Sets', () => {
     it('should return 4,5 for 1-3 and 1-5', () => {
       expect(exclusiveOr(sets['1-3'], sets['1-5'])).to.have.members([4, 5])
       expect(exclusiveOr(sets['1-5'], sets['1-3'])).to.have.members([4, 5])
+    })
+  })
+  describe('combinations', () => {
+    it('leftDiff + intersection + rightDiff = union', () => {
+      // expect(difference())
     })
   })
 })

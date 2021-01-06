@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import 'mocha'
-import { Observable } from '../src/Observable'
+import { Observable } from '../dist/Observable'
 
 describe('Observable', () => {
 
