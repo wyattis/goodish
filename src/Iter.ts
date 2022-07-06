@@ -1,5 +1,4 @@
-// @ts-ignore
-import { random, randomInt } from './Math.ts'
+import { random, randomInt } from './Math'
 
 /**
  * Returns an array of values between the min and max values.
