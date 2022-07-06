@@ -1,5 +1,4 @@
-// @ts-ignore
-import { Point2D } from './Point2D.ts'
+import { Point2D } from './Point2D'
 
 export class Rectangle {
 
